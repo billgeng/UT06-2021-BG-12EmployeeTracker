@@ -1,0 +1,29 @@
+{
+  "name": "ut06-2021-bg-challenge12",
+  "version": "1.0.0",
+  "description": "SQL challenge : Employee Tracker",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/billgeng/UT06-2021-BG-Challenge12.git"
+  },
+  "keywords": [
+    "mysql",
+    "inquirer",
+    "console.table"
+  ],
+  "author": "Bill Geng",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/billgeng/UT06-2021-BG-Challenge12/issues"
+  },
+  "homepage": "https://github.com/billgeng/UT06-2021-BG-Challenge12#readme",
+  "dependencies": {
+    "console.table": "^0.10.0",
+    "inquirer": "^8.1.2",
+    "mysql2": "^2.3.0"
+  }
+}
