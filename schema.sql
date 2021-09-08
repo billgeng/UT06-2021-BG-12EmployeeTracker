@@ -8,7 +8,7 @@ CREATE TABLE employee(
     frist_name VARCHAR(30) NOT NULL,
     last_name VARCHAR(30) NOT NULL,
     role_id INTEGER FOREIGN KEY NOT NULL,
-    manager_id INTEGER FOREIGN KEY NOT NULL
+    manager_id INTEGER FOREIGN KEY 
 );
 
 CREATE TABLE role(
