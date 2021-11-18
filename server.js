@@ -47,7 +47,7 @@ function questions() {
             'Add an Employee',
             'Update Employee Role',
             'Remove Employee',
-            'Remove a Role',
+            'Remove Role',
             'Exit'
         ]
     }) 
@@ -97,13 +97,13 @@ function questions() {
                     removeEmployee();
                     break;
                     
-                case 'Remove a role':
+                case 'Remove Role':
                     removeRole();
                     break;    
 
               case 'Exit':
                   exitApp();
-                  break;
+                
               default:
                   break;        
 
@@ -412,7 +412,7 @@ const viewEmployeesByDepartment = () => {
 
 // Delete an Employee
 const removeEmployee = () => {
-    let sql =     `SELECT employee.id, employee.first_name, employee.last_name FROM employee`;
+    let sql = `SELECT employee.id, employee.first_name, employee.last_name FROM employee`;
 
     connection.query(sql, (error, response) => {
       if (error) throw error;
@@ -452,12 +452,12 @@ const removeEmployee = () => {
 
   // Delete a Role
 const removeRole = () => {
-    let sql = `SELECT role.id, role.title FROM roles`;
+    let sql = `SELECT roles.id, roles.title FROM roles`;
 
     connection.query(sql, (error, response) => {
       if (error) throw error;
       let roleNamesArray = [];
-      response.forEach((role) => {roleNamesArray.push(role.title);});
+      response.forEach((roles) => {roleNamesArray.push(`${roles.title}`);});
 
       inquirer
         .prompt([
@@ -471,13 +471,13 @@ const removeRole = () => {
         .then((answer) => {
           let roleId;
 
-          response.forEach((role) => {
-            if (answer.chosenRole === role.title) {
-              roleId = role.id;
+          response.forEach((roles) => {
+            if (answer.chosenRole === roles.title) {
+              roleId = roles.id;
             }
           });
 
-          let sql =   `DELETE FROM roles WHERE role.id = ?`;
+          let sql =   `DELETE FROM roles WHERE roles.id = ?`;
           connection.query(sql, [roleId], (error) => {
             if (error) throw error;
             

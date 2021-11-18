@@ -47,7 +47,7 @@ npm i mysql2,inquirer,console.table
 
 npm init, npm i ,mysql,node server.js
 
-![alt text](./assets/images/Screenshot-proreadme.png)
+Go Through Video link: https://youtu.be/OEYAJ_YA-hM
 
 ## Badges
 
