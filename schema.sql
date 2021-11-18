@@ -11,16 +11,15 @@ DROP TABLE IF EXISTS employee;
 
 CREATE TABLE department (
     id INTEGER NOT NULL AUTO_INCREMENT,
-    name VARCHAR(60) NOT NULL,
+    department_name VARCHAR(60) NOT NULL,
     PRIMARY KEY(id)
 );
 
 CREATE TABLE roles (
-    id INTEGER NOT NULL AUTO_INCREMENT,
+    id INTEGER PRIMARY KEY AUTO_INCREMENT,
     title VARCHAR(30) NOT NULL,
     salary DECIMAL NOT NULL,
     department_id INTEGER ,
-    PRIMARY KEY (id),
     FOREIGN KEY (department_id) REFERENCES department(id) 
     
 );
